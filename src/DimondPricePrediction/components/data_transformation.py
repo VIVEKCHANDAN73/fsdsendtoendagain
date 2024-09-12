@@ -48,7 +48,7 @@ class DataTransformation:
             ## Categorical Pipeline
             cat_pipeline = Pipeline(
                 steps=[
-                    ('imputer',SimpleImputer(strategy='median')),
+                    ('imputer',SimpleImputer(strategy='most_frequent')),
                     ('ordinalencoder',OrdinalEncoder(categories=[cut_categories,color_categories,clarity_categories])),
                     ('scaler',StandardScaler())
                 ]
